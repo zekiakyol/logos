@@ -1,0 +1,198 @@
+---
+title: "Logos"
+author: "Zeki Akyol"
+institute: "Istanbul Technical University"
+format: html
+---
+
+# Packages
+
+```{r}
+library(here)
+library(png)
+library(grid)
+library(hexSticker)
+library(showtext)
+library(tidyverse)
+library(tsibble)
+```
+
+# Econometrics
+
+```{r}
+# Create Dataset:
+set.seed(2)
+simulation_size <- 10000000
+df_econometrics <- tibble(group = rep(c("a", "b"), each = simulation_size),
+                          samples = c(rnorm(n = simulation_size, mean = 7, sd = 4),
+                                      rnorm(n = simulation_size, mean = 0, sd = 8)))
+
+# Create Subplot:
+p_econometrics <- ggplot(data = df_econometrics, aes(x = samples, fill = factor(group))) +
+  geom_density(alpha = 0.8, color = "black", show.legend = FALSE) +
+  scale_fill_manual(values = c("magenta", "#75F8FF")) +
+  theme_void()
+
+# Create Sticker:
+sticker(p_econometrics,           # Subplot
+        s_x = 1,                  # Subplot x coordinate
+        s_y = 1.23,               # Subplot y coordinate
+        s_width = 1.5,            # Subplot width
+        s_height = 1.1,           # Subplot height
+        package = "Econometrics", # Text
+        p_size = 70,              # Text size
+        p_color = "#FFFFFF",      # Text color
+        p_y = 0.59,               # Text y coordinate
+        h_fill="#000000",         # Hex background color
+        h_size = 6,               # Hex border size
+        h_color = "#FCCE09",      # Hex border color
+        # url = "github.com/zekiakyol/Econometrics", # Url text [this 4 lines will be uncommented when notes are public]
+        # u_color = "white",                         # Url text color
+        # u_size = 15,                               # Url text color
+        # u_y = 0.07,                                # Url y coordinate
+        dpi = 300,
+        filename = "logos_png/econometrics_logo.png") # ggsave() will override the default png on this line.
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = "logos_png/econometrics_logo.png",
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = "logos_png/econometrics_logo_square.png",
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+```
+
+# Mathematical Economics
+
+```{r}
+# Create Subplot:
+p_mathecon <- ggplot() +
+  stat_function(fun = cos,
+                color = "red",
+                lwd = 2.5,
+                geom = "point") +
+  xlim(c(-1, 5)) +
+  theme_void()
+
+# Create Sticker:
+sticker(p_mathecon,                         # Subplot
+        s_x = 1,                            # Subplot x coordinate
+        s_y = 1.15,                         # Subplot y coordinate
+        s_width = 1.1,                      # Subplot width
+        s_height = 1,                       # Subplot height
+        package = "Mathematical Economics", # Text
+        p_size = 40,                        # Text size
+        p_color = "#FFFFFF",                # Text color
+        p_y = 0.56,                         # Text y coordinate
+        h_fill="#000000",                   # Hex background color
+        h_size = 6,                         # Hex border size
+        h_color = "#FCCE09",                # Hex border color
+        dpi = 300,
+        filename = here("logos_png", "mathematical_economics_logo.png")) # ggsave() will override the default png on this line.
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = here("logos_png", "mathematical_economics_logo.png"),
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = here("logos_png", "mathematical_economics_logo_square.png"),
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+```
+
+# Statistical Methods in Economics
+
+```{r}
+# Create Subplot:
+p_statecon <- ggplot() +
+  annotate("rect", xmin = -2, xmax = 5, ymin = 0, ymax = 10, color = "white", fill = "white", size = 2) +
+  annotate("rect", xmin = 5, xmax = 12, ymin = 0, ymax = 10, color = "white", fill = "black", size = 2) +
+  annotate("text", x = 1.5, y = 5, label = "H", size = 200, color = "black") +
+  annotate("text", x = 8.5, y = 5, label = "T", size = 200, color = "white") +
+  theme_void()
+
+# Create Sticker:
+sticker(p_statecon,                                   # Subplot
+        s_x = 1,                                      # Subplot x coordinate
+        s_y = 1.15,                                   # Subplot y coordinate
+        s_width = 1,                                  # Subplot width
+        s_height = 0.9,                               # Subplot height
+        package = "Statistical Methods in Economics", # Text
+        p_size = 33,                                  # Text size
+        p_color = "#FFFFFF",                          # Text color
+        p_y = 0.56,                                   # Text y coordinate
+        h_fill="#000000",                             # Hex background color
+        h_size = 6,                                   # Hex border size
+        h_color = "#FCCE09",                          # Hex border color
+        dpi = 300,
+        filename = here("logos_png", "statistical_methods_in_economics_logo.png")) # ggsave() will override the default png on this line
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = here("logos_png", "statistical_methods_in_economics_logo.png"),
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = here("logos_png", "statistical_methods_in_economics_logo_square.png"),
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+```
+
+# Research Methods in Economics
+
+```{r}
+# Create Dataset:
+df_researchecon <- tibble(year = rep(-2:2, times = 2),
+                          person = rep(c("A", "B"), each = 5),
+                          wage = c(3, 4, 5, 8, 11, 1, 2, 3, 4, 5))
+
+# Create Subplot:
+p_researchecon <- ggplot(df_researchecon, aes(x = year, y = wage, color = factor(person))) +
+  geom_vline(xintercept = 0, size = 2, color = "white", linetype = "longdash") +
+  geom_line(size = 7, show.legend = FALSE) +
+  scale_colour_manual(values = c(A = "#EC2E5D", B = "#54B972")) +
+  ylim(0, 15) +
+  theme_void() + 
+  theme_transparent()
+
+# Create Sticker:
+sticker(p_researchecon,                               # Subplot
+        s_x = 1,                                      # Subplot x coordinate
+        s_y = 1.2,                                    # Subplot y coordinate
+        s_width = 1.2,                                # Subplot width
+        s_height = 1,                                 # Subplot height
+        package = "Research Methods in Economics",    # Text
+        p_size = 33,                                  # Text size
+        p_color = "#FFFFFF",                          # Text color
+        p_y = 0.56,                                   # Text y coordinate
+        h_fill="#000000",                             # Hex background color
+        h_size = 6,                                   # Hex border size
+        h_color = "#FCCE09",                          # Hex border color
+        dpi = 300,
+        filename = "logos_png/research_methods_in_economics_logo.png") # ggsave() will override the default png on this line.
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = "logos_png/research_methods_in_economics_logo.png",
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = "logos_png/research_methods_in_economics_logo_square.png",
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       dpi = 300)
+```
+
+```{r}
+1 + 1 # trivial code to "Run All Chunks Above"
+```
