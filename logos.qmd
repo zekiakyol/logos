@@ -14,7 +14,6 @@ library(grid)
 library(hexSticker)
 library(showtext)
 library(tidyverse)
-library(tsibble)
 ```
 
 # Econometrics
@@ -43,7 +42,7 @@ sticker(p_econometrics,           # Subplot
         p_size = 70,              # Text size
         p_color = "#FFFFFF",      # Text color
         p_y = 0.59,               # Text y coordinate
-        h_fill="#000000",         # Hex background color
+        h_fill = "#000000",       # Hex background color
         h_size = 6,               # Hex border size
         h_color = "#FCCE09",      # Hex border color
         # url = "github.com/zekiakyol/Econometrics", # Url text [this 4 lines will be uncommented when notes are public]
@@ -51,16 +50,16 @@ sticker(p_econometrics,           # Subplot
         # u_size = 15,                               # Url text color
         # u_y = 0.07,                                # Url y coordinate
         dpi = 300,
-        filename = "logos_png/econometrics_logo.png") # ggsave() will override the default png on this line.
+        filename = here("logos_png", "econometrics_logo.png")) # ggsave() will override the default png on this line
 
 # Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
-ggsave(filename = "logos_png/econometrics_logo.png",
+ggsave(filename = here("logos_png", "econometrics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
        dpi = 300)
 
 # Save the sticker as a square:
-ggsave(filename = "logos_png/econometrics_logo_square.png",
+ggsave(filename = here("logos_png", "econometrics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
        dpi = 300)
@@ -88,11 +87,11 @@ sticker(p_mathecon,                         # Subplot
         p_size = 40,                        # Text size
         p_color = "#FFFFFF",                # Text color
         p_y = 0.56,                         # Text y coordinate
-        h_fill="#000000",                   # Hex background color
+        h_fill = "#000000",                 # Hex background color
         h_size = 6,                         # Hex border size
         h_color = "#FCCE09",                # Hex border color
         dpi = 300,
-        filename = here("logos_png", "mathematical_economics_logo.png")) # ggsave() will override the default png on this line.
+        filename = here("logos_png", "mathematical_economics_logo.png")) # ggsave() will override the default png on this line
 
 # Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
 ggsave(filename = here("logos_png", "mathematical_economics_logo.png"),
@@ -128,7 +127,7 @@ sticker(p_statecon,                                   # Subplot
         p_size = 33,                                  # Text size
         p_color = "#FFFFFF",                          # Text color
         p_y = 0.56,                                   # Text y coordinate
-        h_fill="#000000",                             # Hex background color
+        h_fill = "#000000",                           # Hex background color
         h_size = 6,                                   # Hex border size
         h_color = "#FCCE09",                          # Hex border color
         dpi = 300,
@@ -174,20 +173,20 @@ sticker(p_researchecon,                               # Subplot
         p_size = 33,                                  # Text size
         p_color = "#FFFFFF",                          # Text color
         p_y = 0.56,                                   # Text y coordinate
-        h_fill="#000000",                             # Hex background color
+        h_fill = "#000000",                           # Hex background color
         h_size = 6,                                   # Hex border size
         h_color = "#FCCE09",                          # Hex border color
         dpi = 300,
-        filename = "logos_png/research_methods_in_economics_logo.png") # ggsave() will override the default png on this line.
+        filename = here("logos_png", "research_methods_in_economics_logo.png")) # ggsave() will override the default png on this line
 
 # Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
-ggsave(filename = "logos_png/research_methods_in_economics_logo.png",
+ggsave(filename = here("logos_png", "research_methods_in_economics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
        dpi = 300)
 
 # Save the sticker as a square:
-ggsave(filename = "logos_png/research_methods_in_economics_logo_square.png",
+ggsave(filename = here("logos_png", "research_methods_in_economics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
        dpi = 300)
