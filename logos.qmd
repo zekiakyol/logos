@@ -86,7 +86,7 @@ sticker(p_mathecon,                         # Subplot
         s_width = 1.1,                      # Subplot width
         s_height = 1,                       # Subplot height
         package = "Mathematical Economics", # Text
-        p_size = 40,                        # Text size
+        p_size = 43,                        # Text size
         p_color = "#FFFFFF",                # Text color
         p_y = 0.56,                         # Text y coordinate
         h_fill = "#000000",                 # Hex background color
@@ -176,7 +176,7 @@ sticker(p_researchecon,                               # Subplot
         s_width = 1.2,                                # Subplot width
         s_height = 1,                                 # Subplot height
         package = "Research Methods in Economics",    # Text
-        p_size = 33,                                  # Text size
+        p_size = 34,                                  # Text size
         p_color = "#FFFFFF",                          # Text color
         p_y = 0.56,                                   # Text y coordinate
         h_fill = "#000000",                           # Hex background color
