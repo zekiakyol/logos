@@ -56,12 +56,14 @@ sticker(p_econometrics,           # Subplot
 ggsave(filename = here("logos_png", "econometrics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 
 # Save the sticker as a square:
 ggsave(filename = here("logos_png", "econometrics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 ```
 
@@ -97,12 +99,14 @@ sticker(p_mathecon,                         # Subplot
 ggsave(filename = here("logos_png", "mathematical_economics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 
 # Save the sticker as a square:
 ggsave(filename = here("logos_png", "mathematical_economics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 ```
 
@@ -137,12 +141,14 @@ sticker(p_statecon,                                   # Subplot
 ggsave(filename = here("logos_png", "statistical_methods_in_economics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 
 # Save the sticker as a square:
 ggsave(filename = here("logos_png", "statistical_methods_in_economics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 ```
 
@@ -183,12 +189,14 @@ sticker(p_researchecon,                               # Subplot
 ggsave(filename = here("logos_png", "research_methods_in_economics_logo.png"),
        width = 2072, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 
 # Save the sticker as a square:
 ggsave(filename = here("logos_png", "research_methods_in_economics_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
        dpi = 300)
 ```
 
