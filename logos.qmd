@@ -13,6 +13,7 @@ library(png)
 library(grid)
 library(hexSticker)
 library(showtext)
+library(ggforce)
 library(tidyverse)
 ```
 
@@ -166,8 +167,7 @@ p_researchecon <- ggplot(df_researchecon, aes(x = year, y = wage, color = factor
   geom_line(size = 7, show.legend = FALSE) +
   scale_colour_manual(values = c(A = "#EC2E5D", B = "#54B972")) +
   ylim(0, 15) +
-  theme_void() + 
-  theme_transparent()
+  theme_void()
 
 # Create Sticker:
 sticker(p_researchecon,                               # Subplot
@@ -194,6 +194,127 @@ ggsave(filename = here("logos_png", "research_methods_in_economics_logo.png"),
 
 # Save the sticker as a square:
 ggsave(filename = here("logos_png", "research_methods_in_economics_logo_square.png"),
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+```
+
+# Advanced Econometrics
+
+```{r}
+# Create Subplot:
+p_advanced_econometrics <- ggplot() +
+  annotate("text",
+           x = 5, y = 6.3,
+           color = "#00FF41", size = 180,
+           label = "0 1") + 
+  annotate("text",
+           x = 0.1, y = 7,
+           color = "#00FF41", size = 200,
+           label = "[",
+           alpha = 0.2) + 
+  annotate("text",
+           x = 9.9, y = 7,
+           color = "#00FF41", size = 200,
+           label = "]",
+           alpha = 0.2) + 
+  xlim(0, 10) +
+  ylim(0, 10) +
+  theme_void()
+
+# Create Sticker:
+sticker(p_advanced_econometrics,                      # Subplot
+        s_x = 1,                                      # Subplot x coordinate
+        s_y = 1,                                      # Subplot y coordinate
+        s_width = 1.2,                                # Subplot width
+        s_height = 1,                                 # Subplot height
+        package = "Advanced Econometrics",            # Text
+        p_size = 42,                                  # Text size
+        p_color = "#FFFFFF",                          # Text color
+        p_y = 0.60,                                   # Text y coordinate
+        h_fill = "#000000",                           # Hex background color
+        h_size = 6,                                   # Hex border size
+        h_color = "#FCCE09",                          # Hex border color
+        dpi = 300,
+        filename = here("logos_png", "advanced_econometrics_logo.png")) # ggsave() will override the default png on this line
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = here("logos_png", "advanced_econometrics_logo.png"),
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = here("logos_png", "advanced_econometrics_logo_square.png"),
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+```
+
+# Machine Learning Readings
+
+```{r}
+# Create Subplot:
+coordinate_color <- "white"
+shape_color <- "#009641"
+
+positions_lasso <- data.frame(
+  id = c( "east", "north", "west", "south"),
+  x = c(1, 2, 3, 2),
+  y = c(5, 6, 5, 4)
+)
+
+positions_elasticnet <- data.frame(
+  id = c( "east", "north", "west", "south"),
+  x = c(7, 8, 9, 8),
+  y = c(5, 6, 5, 4)
+)
+
+p_mlreadings <- ggplot() +
+  geom_circle(aes(x0 = 5, y0 = 5, r = 1), color = shape_color, fill = shape_color) +
+  geom_polygon(aes(x = x, y = y), color = shape_color, fill = shape_color, data = positions_lasso) + 
+  geom_polygon(aes(x = x, y = y), color = shape_color, fill = shape_color, data = positions_elasticnet) + 
+  geom_curve(aes(x = 7.05, y = 5, xend = 8, yend = 5.95), color = shape_color, size = 2.1, curvature = -0.15) +
+  geom_curve(aes(x = 7.05, y = 5, xend = 8, yend = 4.05), color = shape_color, size = 2.1, curvature = 0.15) +
+  geom_curve(aes(x = 8.95, y = 5, xend = 8, yend = 5.95), color = shape_color, size = 2.1, curvature = 0.15) +
+  geom_curve(aes(x = 8.95, y = 5, xend = 8, yend = 4.05), color = shape_color, size = 2.1, curvature = -0.15) +
+  geom_segment(aes(x = 2, y = 3, xend = 2, yend = 7), color = coordinate_color, size = 1) + 
+  geom_segment(aes(x = 5, y = 3, xend = 5, yend = 7), color = coordinate_color, size = 1) +
+  geom_segment(aes(x = 8, y = 3, xend = 8, yend = 7), color = coordinate_color, size = 1) + 
+  geom_segment(aes(x = 0, y = 5, xend = 10, yend = 5), color = coordinate_color, size = 1) +
+  xlim(c(0, 10)) +
+  ylim(c(0, 10)) + 
+  coord_fixed() +
+  theme_void()
+
+# Create Sticker:
+sticker(p_mlreadings,                           # Subplot
+        s_x = 1,                                # Subplot x coordinate
+        s_y = 1.1,                              # Subplot y coordinate
+        s_width = 1.6,                          # Subplot width
+        s_height = 1.6,                         # Subplot height
+        package = "Machine Learning Readings",  # Text
+        p_size = 41,                            # Text size
+        p_color = "#FFFFFF",                    # Text color
+        p_y = 0.60,                             # Text y coordinate
+        h_fill = "#000000",                     # Hex background color
+        h_size = 6,                             # Hex border size
+        h_color = "#FCCE09",                    # Hex border color
+        dpi = 300,
+        filename = here("logos_png", "mlreadings_logo.png")) # ggsave() will override the default png on this line
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = here("logos_png", "mlreadings_logo.png"),
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = here("logos_png", "mlreadings_logo_square.png"),
        width = 2400, height = 2400, units = "px",
        bg = "transparent",
        type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
