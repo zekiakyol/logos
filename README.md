@@ -13,6 +13,10 @@ Logos are created using [hexSticker](https://github.com/GuangchuangYu/hexSticker
     <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/statistical_methods_in_economics_logo.png" width="300"></td>
     <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/mathematical_economics_logo.png" width="300"></td>
   </tr>
+  <tr>
+    <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/mlreadings_logo.png" width="300"></td>
+    <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/advanced_econometrics_logo.png" width="300"></td>
+  </tr>
 </table>
 
 # Licences
