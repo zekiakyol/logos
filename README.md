@@ -17,6 +17,10 @@ Logos are created using [hexSticker](https://github.com/GuangchuangYu/hexSticker
     <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/mlreadings_logo.png" width="300"></td>
     <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/advanced_econometrics_logo.png" width="300"></td>
   </tr>
+    <tr>
+    <td valign="top"><img src="https://github.com/zekiakyol/logos/blob/main/logos_png/proofbasedmath_readings_logo.png" width="300"></td>
+    <td valign="top"><img width="300"></td>
+  </tr>
 </table>
 
 # Licences
