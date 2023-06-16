@@ -321,6 +321,57 @@ ggsave(filename = here("logos_png", "mlreadings_logo_square.png"),
        dpi = 300)
 ```
 
+
+# Proof-Based Math Readings
+
+```{r}
+# Create Subplot:
+data_proofbasedmath_readings <- tibble(x = c(0:10,
+                                             0:10,
+                                             0:3),
+                                       y = c(rep(9, times = 11),
+                                             rep(5, times = 11),
+                                             rep(1, times = 4)))
+
+p_proofbasedmath_readings <- ggplot(data_proofbasedmath_readings, aes(x = x, y = y)) +
+  geom_point(color = "white", shape = "square", size = 3) +
+  geom_point(aes(x = 5, y = 1), color = "red", shape = "square", size = 12) +
+  xlim(c(0, 10)) +
+  ylim(c(0, 10)) +
+  coord_fixed() +
+  theme_void()
+
+# Create Sticker:
+sticker(p_proofbasedmath_readings,              # Subplot
+        s_x = 1,                                # Subplot x coordinate
+        s_y = 1.1,                              # Subplot y coordinate
+        s_width = 1,                            # Subplot width
+        s_height = 1,                           # Subplot height
+        package = "Proof-Based Math Readings",  # Text
+        p_size = 41,                            # Text size
+        p_color = "#FFFFFF",                    # Text color
+        p_y = 0.60,                             # Text y coordinate
+        h_fill = "#000000",                     # Hex background color
+        h_size = 6,                             # Hex border size
+        h_color = "#FCCE09",                    # Hex border color
+        dpi = 300,
+        filename = here("logos_png", "proofbasedmath_readings_logo.png")) # ggsave() will override the default png on this line
+
+# Save the sticker as a rectangle (keeps original dimension ratio of hexagon):
+ggsave(filename = here("logos_png", "proofbasedmath_readings_logo.png"),
+       width = 2072, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+
+# Save the sticker as a square:
+ggsave(filename = here("logos_png", "proofbasedmath_readings_logo_square.png"),
+       width = 2400, height = 2400, units = "px",
+       bg = "transparent",
+       type = "cairo", # "cairo" requires installation of https://www.xquartz.org on our macOS machine
+       dpi = 300)
+```
+
 ```{r}
 1 + 1 # trivial code to "Run All Chunks Above"
 ```
