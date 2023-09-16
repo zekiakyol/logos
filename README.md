@@ -23,7 +23,7 @@ Logos are created using [hexSticker](https://github.com/GuangchuangYu/hexSticker
   </tr>
 </table>
 
-# Licences
+# Licenses
 
 - Figures are licensed under Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).
 - Codes are licensed under [MIT License](https://github.com/zekiakyol/logos/blob/main/LICENSE).
